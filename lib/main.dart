@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'screens/homepage.dart';
 
 void main() => runApp(WaterApp());
 
@@ -7,12 +8,7 @@ class WaterApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'WaterApp',
-      home: Scaffold(
-          body: SafeArea(
-        child: Container(
-          child: Text('WATERAPP'),
-        ),
-      )),
+      home: Homepage(),
     );
   }
 }
