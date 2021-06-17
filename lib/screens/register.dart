@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class Register extends StatelessWidget {
+  static const routePathName = 'Register';
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -55,6 +57,7 @@ class Register extends StatelessWidget {
                     )),
                   )),
               GestureDetector(
+                onTap: () => Navigator.of(context).pop(),
                 child: Text(
                   "You already have an account? Login here",
                   style: TextStyle(color: Colors.blue),

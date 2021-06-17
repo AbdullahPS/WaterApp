@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
+import 'package:watercontrol/screens/register.dart';
 
 class Homepage extends StatelessWidget {
+  static const routePathName = 'Homepage';
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -51,6 +53,8 @@ class Homepage extends StatelessWidget {
               SignInButton(Buttons.Facebook, onPressed: () => null),
               SignInButton(Buttons.Google, onPressed: () => null),
               GestureDetector(
+                onTap: () =>
+                    Navigator.of(context).pushNamed(Register.routePathName),
                 child: Text(
                   "Don't you have an account? Register here",
                   style: TextStyle(color: Colors.blue),
