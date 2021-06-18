@@ -7,15 +7,22 @@ class WaterCard extends StatelessWidget {
   WaterCard({this.name, this.id, this.price});
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
+    return Container(
+      height: 200,
       child: Card(
-          child: ListTile(
-        leading: CircleAvatar(
-          child: Text('Description'),
+        shadowColor: Colors.yellow,
+        elevation: 10,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10.0),
         ),
-        title: Text(name),
-        subtitle: Text(price.toString()),
-      )),
+        child: ListTile(
+          leading: CircleAvatar(
+            child: Text('Description'),
+          ),
+          title: Text(name),
+          subtitle: Text(price.toString()),
+        ),
+      ),
     );
   }
 }
