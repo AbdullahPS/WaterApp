@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:watercontrol/screens/register.dart';
+import 'watermodule.dart';
 
 class Homepage extends StatelessWidget {
   static const routePathName = 'Homepage';
@@ -36,7 +37,8 @@ class Homepage extends StatelessWidget {
                     border: OutlineInputBorder(), labelText: "Password"),
               ),
               TextButton(
-                  onPressed: () => null,
+                  onPressed: () => Navigator.of(context)
+                      .pushNamed(Watermodule.routePathName),
                   child: Container(
                     decoration: BoxDecoration(
                         border: Border.all(color: Colors.redAccent),
