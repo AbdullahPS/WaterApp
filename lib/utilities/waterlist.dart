@@ -1,4 +1,4 @@
-import 'watermodules.dart';
+import '../modules/watermodules.dart';
 
 List<WaterModules> myList = [
   WaterModules(id: 1, name: 'Module1', price: 10),

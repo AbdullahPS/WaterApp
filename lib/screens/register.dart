@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:watercontrol/utilities/constansts.dart';
 
 class Register extends StatelessWidget {
   static const routePathName = 'Register';
@@ -13,7 +14,7 @@ class Register extends StatelessWidget {
         body: Container(
           color: Colors.transparent,
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Padding(
                 padding: EdgeInsets.only(top: 1),
@@ -22,24 +23,43 @@ class Register extends StatelessWidget {
                   width: MediaQuery.of(context).size.width,
                 ),
               ),
-              TextField(
-                keyboardType: TextInputType.emailAddress,
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: "Email",
+              Container(
+                width: size.width * 0.8,
+                child: TextField(
+                  keyboardType: TextInputType.emailAddress,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    prefixIcon: Icon(
+                      Icons.email,
+                      color: Colors.black12,
+                    ),
+                    labelText: "Email",
+                  ),
                 ),
               ),
-              TextField(
-                keyboardType: TextInputType.phone,
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: "Phone Number",
+              Container(
+                width: size.width * 0.8,
+                child: TextField(
+                  keyboardType: TextInputType.phone,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    prefixIcon: Icon(
+                      Icons.phone,
+                      color: Colors.black12,
+                    ),
+                    labelText: "Phone Number",
+                  ),
                 ),
               ),
-              TextField(
-                obscureText: true,
-                decoration: InputDecoration(
-                    border: OutlineInputBorder(), labelText: "Password"),
+              Container(
+                width: size.width * 0.8,
+                child: TextField(
+                  obscureText: true,
+                  decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      prefixIcon: Icon(Icons.password, color: Colors.black12),
+                      labelText: "Password"),
+                ),
               ),
               TextButton(
                   onPressed: () => null,
