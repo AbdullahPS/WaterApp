@@ -9,9 +9,8 @@ class WaterCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 200,
-      color: Colors.blue,
       child: Card(
-        shadowColor: Colors.yellow,
+        shadowColor: Colors.grey,
         elevation: 10,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10.0),

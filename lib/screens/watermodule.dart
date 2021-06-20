@@ -36,7 +36,7 @@ class _State extends State<Watermodule> {
                           child: GridView.builder(
                               gridDelegate:
                                   SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 2,
+                                crossAxisCount: 1,
                                 crossAxisSpacing: 15.0,
                                 mainAxisSpacing: 15.0,
                               ),
