@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:watercontrol/widgets/card.dart';
-import 'package:watercontrol/utilities/waterlist.dart';
+import 'package:watercontrol/widgets/cardbuilder.dart';
 
 class Watermodule extends StatefulWidget {
   static const routePathName = 'Watermodule';
@@ -31,28 +30,11 @@ class _State extends State<Watermodule> {
                 child: TabBarView(
                   children: [
                     Column(
-                      children: [
-                        Expanded(
-                          child: GridView.builder(
-                              gridDelegate:
-                                  SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 1,
-                                crossAxisSpacing: 15.0,
-                                mainAxisSpacing: 15.0,
-                              ),
-                              itemCount: myList.length,
-                              itemBuilder: (BuildContext context, int index) {
-                                return WaterCard(
-                                  name: myList[index].name,
-                                  id: myList[index].id,
-                                  price: myList[index].price,
-                                );
-                              }),
-                          flex: 12,
-                        )
-                      ],
+                      children: [cardBuilder(listNum: 1)],
                     ),
-                    Icon(Icons.password),
+                    Column(
+                      children: [cardBuilder(listNum: 2)],
+                    ),
                   ],
                 ),
               ),

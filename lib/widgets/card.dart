@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:watercontrol/utilities/waterlist.dart';
+import 'package:watercontrol/screens/cartdetail.dart';
 
 class WaterCard extends StatelessWidget {
   final String name;
@@ -8,21 +10,41 @@ class WaterCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 200,
-      child: Card(
-        shadowColor: Colors.grey,
-        elevation: 10,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10.0),
-        ),
-        child: GridTile(
-          header: CircleAvatar(
-            child: Text('Description'),
+        height: 100,
+        child: GestureDetector(
+          child: Card(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                ListTile(
+                  leading: Icon(
+                    Icons.water,
+                    size: 50,
+                  ),
+                  title: Text(this.name),
+                  subtitle: Text(id.toString()),
+                ),
+                Image.asset('assets/images/water.png'),
+                ButtonBar(
+                  children: <Widget>[
+                    TextButton(
+                      child: Text('View'),
+                      onPressed: () {/* ... */},
+                    ),
+                    TextButton(
+                      child: Icon(Icons.favorite),
+                      onPressed: () {
+                        onPressedLove(id);
+                      },
+                    ),
+                  ],
+                ),
+                Switch(value: true, onChanged: null)
+              ],
+            ),
           ),
-          footer: Text(name),
-          child: Text(price.toString()),
-        ),
-      ),
-    );
+          onTap: (() => Navigator.push(
+              context, MaterialPageRoute(builder: (context) => CardDetail()))),
+        ));
   }
 }

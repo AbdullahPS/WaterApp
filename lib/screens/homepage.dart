@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:watercontrol/screens/register.dart';
 import 'watermodule.dart';
-import 'package:watercontrol/utilities/constansts.dart';
 
 class Homepage extends StatelessWidget {
   static const routePathName = 'Homepage';
