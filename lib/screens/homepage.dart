@@ -75,6 +75,7 @@ class Homepage extends StatelessWidget {
                           .pushNamed(Register.routePathName),
                       child: Text(
                         "Don't you have an account? Register here",
+                        style: TextStyle(color: Colors.blue),
                       ),
                     )
                   ],

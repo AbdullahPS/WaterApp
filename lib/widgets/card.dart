@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:watercontrol/utilities/waterlist.dart';
 import 'package:watercontrol/screens/cartdetail.dart';
+import 'package:provider/provider.dart';
 
 class WaterCard extends StatelessWidget {
   final String name;
@@ -9,6 +10,9 @@ class WaterCard extends StatelessWidget {
   WaterCard({this.name, this.id, this.price});
   @override
   Widget build(BuildContext context) {
+    final listClass = Provider.of<Modules>(context);
+    final list = listClass.myList;
+
     return Container(
         height: 100,
         child: GestureDetector(
@@ -34,7 +38,7 @@ class WaterCard extends StatelessWidget {
                     TextButton(
                       child: Icon(Icons.favorite),
                       onPressed: () {
-                        onPressedLove(id);
+                        listClass.onPressedLove(id);
                       },
                     ),
                   ],
