@@ -36,7 +36,12 @@ class WaterCard extends StatelessWidget {
                       onPressed: () {/* ... */},
                     ),
                     TextButton(
-                      child: Icon(Icons.favorite),
+                      child: listClass.getByID(id).isLoved
+                          ? Icon(Icons.favorite, color: Colors.red)
+                          : Icon(
+                              Icons.favorite_border,
+                              color: Colors.red,
+                            ),
                       onPressed: () {
                         listClass.onPressedLove(id);
                       },
