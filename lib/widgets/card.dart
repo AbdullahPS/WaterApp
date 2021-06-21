@@ -37,7 +37,10 @@ class WaterCard extends StatelessWidget {
                     ),
                     TextButton(
                       child: listClass.getByID(id).isLoved
-                          ? Icon(Icons.favorite, color: Colors.red)
+                          ? Icon(
+                              Icons.favorite,
+                              color: Colors.red,
+                            )
                           : Icon(
                               Icons.favorite_border,
                               color: Colors.red,

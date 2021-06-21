@@ -19,8 +19,8 @@ class _State extends State<Watermodule> {
                 leading: Icon(Icons.water),
                 bottom: TabBar(
                   tabs: [
-                    Tab(icon: Icon(Icons.directions_car)),
-                    Tab(icon: Icon(Icons.directions_transit)),
+                    Tab(icon: Icon(Icons.border_all_outlined)),
+                    Tab(icon: Icon(Icons.favorite_sharp)),
                   ],
                 ),
                 title: Text('Tabs Demo'),
