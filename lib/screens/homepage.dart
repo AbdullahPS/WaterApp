@@ -53,23 +53,26 @@ class Homepage extends StatelessWidget {
                         labelText: "Password"),
                   ),
                 ),
-                SizedBox(height: size.width / 10),
+                SizedBox(height: size.height / 20),
                 Column(
                   children: [
                     TextButton(
                         onPressed: () => Navigator.of(context)
                             .pushNamed(Watermodule.routePathName),
                         child: Container(
+                          decoration: BoxDecoration(
+                              border: Border.all(color: Colors.redAccent),
+                              color: Colors.blue,
+                              borderRadius: BorderRadius.circular(60)),
                           width: size.width * 0.7,
                           height: size.height * 0.075,
-                          color: Colors.lightBlue,
                           child: Center(
                               child: Text(
                             "Login",
                             style: TextStyle(fontSize: 20, color: Colors.white),
                           )),
                         )),
-                    SizedBox(height: size.width / 10),
+                    SizedBox(height: size.height / 20),
                     GestureDetector(
                       onTap: () => Navigator.of(context)
                           .pushNamed(Register.routePathName),

@@ -8,13 +8,14 @@ class Register extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
+        resizeToAvoidBottomInset: false,
         appBar: AppBar(
           title: Text('WaterApp'),
         ),
         body: Container(
           color: Colors.transparent,
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Padding(
                 padding: EdgeInsets.only(top: 1),
@@ -37,6 +38,7 @@ class Register extends StatelessWidget {
                   ),
                 ),
               ),
+              SizedBox(height: size.width / 20),
               Container(
                 width: size.width * 0.8,
                 child: TextField(
@@ -51,6 +53,7 @@ class Register extends StatelessWidget {
                   ),
                 ),
               ),
+              SizedBox(height: size.width / 20),
               Container(
                 width: size.width * 0.8,
                 child: TextField(
@@ -61,6 +64,7 @@ class Register extends StatelessWidget {
                       labelText: "Password"),
                 ),
               ),
+              SizedBox(height: size.width / 10),
               TextButton(
                   onPressed: () => null,
                   child: Container(
@@ -76,6 +80,9 @@ class Register extends StatelessWidget {
                       style: TextStyle(fontSize: 20, color: Colors.white),
                     )),
                   )),
+              SizedBox(
+                height: size.height / 20,
+              ),
               GestureDetector(
                 onTap: () => Navigator.of(context).pop(),
                 child: Text(
