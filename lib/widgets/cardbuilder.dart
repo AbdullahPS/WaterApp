@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:watercontrol/utilities/waterlist.dart';
 import 'package:watercontrol/widgets/card.dart';
 import 'package:provider/provider.dart';
+import 'favCard.dart';
 
 class cardBuilder extends StatelessWidget {
   final int listNum;
@@ -16,17 +17,23 @@ class cardBuilder extends StatelessWidget {
       child: list.isNotEmpty
           ? GridView.builder(
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 1,
+                crossAxisCount: listNum == 1 ? 1 : 2,
                 crossAxisSpacing: 15.0,
                 mainAxisSpacing: 15.0,
               ),
               itemCount: list.length,
               itemBuilder: (BuildContext context, int index) {
-                return WaterCard(
-                  name: list[index].name,
-                  id: list[index].id,
-                  price: list[index].price,
-                );
+                return listNum == 1
+                    ? WaterCard(
+                        name: list[index].name,
+                        id: list[index].id,
+                        price: list[index].price,
+                      )
+                    : FavCard(
+                        name: list[index].name,
+                        id: list[index].id,
+                        price: list[index].price,
+                      );
               })
           : Text('u dont have any favorites'),
       flex: 12,
