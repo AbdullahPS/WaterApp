@@ -1,15 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:watercontrol/utilities/constansts.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
-class Register extends StatelessWidget {
+class Register extends StatefulWidget {
   static const routePathName = 'Register';
+
+  @override
+  _RegisterState createState() => _RegisterState();
+}
+
+class _RegisterState extends State<Register> {
+  String errormessage;
+  TextEditingController emailController = new TextEditingController();
+  TextEditingController passwordController = new TextEditingController();
+  TextEditingController phoneController = new TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    TextEditingController emailController = new TextEditingController();
-    TextEditingController passwordController = new TextEditingController();
-    TextEditingController phoneController = new TextEditingController();
     return Scaffold(
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
@@ -72,7 +80,10 @@ class Register extends StatelessWidget {
               ),
               SizedBox(height: size.width / 10),
               TextButton(
-                  onPressed: () => null,
+                  onPressed: () => validateInputData(emailController.text,
+                          passwordController.text, phoneController.text)
+                      ? Fluttertoast.showToast(msg: "Login Succesfully")
+                      : Fluttertoast.showToast(msg: errormessage),
                   child: Container(
                     decoration: BoxDecoration(
                         border: Border.all(color: Colors.redAccent),
@@ -99,5 +110,20 @@ class Register extends StatelessWidget {
             ],
           ),
         ));
+  }
+
+  bool validateInputData(email, pass, phone) {
+    if (!email.toString().contains('@')) {
+      errormessage = ('enter a valid email adress');
+      return false;
+    } else if (pass.toString().length < 8) {
+      errormessage = ('password length hast to be at least 8 caracters long');
+      return false;
+    }
+    if (phone.toString().length != 10) {
+      errormessage = ('Please enter a valid phone number');
+      return false;
+    }
+    return true;
   }
 }
