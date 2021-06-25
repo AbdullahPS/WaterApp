@@ -7,6 +7,9 @@ class Register extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+    TextEditingController emailController = new TextEditingController();
+    TextEditingController passwordController = new TextEditingController();
+    TextEditingController phoneController = new TextEditingController();
     return Scaffold(
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
@@ -28,6 +31,7 @@ class Register extends StatelessWidget {
                 width: size.width * 0.8,
                 child: TextField(
                   keyboardType: TextInputType.emailAddress,
+                  controller: emailController,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     prefixIcon: Icon(
@@ -43,6 +47,7 @@ class Register extends StatelessWidget {
                 width: size.width * 0.8,
                 child: TextField(
                   keyboardType: TextInputType.phone,
+                  controller: phoneController,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     prefixIcon: Icon(
@@ -58,6 +63,7 @@ class Register extends StatelessWidget {
                 width: size.width * 0.8,
                 child: TextField(
                   obscureText: true,
+                  controller: passwordController,
                   decoration: InputDecoration(
                       border: OutlineInputBorder(),
                       prefixIcon: Icon(Icons.password, color: Colors.black12),

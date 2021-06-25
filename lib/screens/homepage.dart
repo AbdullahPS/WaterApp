@@ -8,6 +8,9 @@ class Homepage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+    TextEditingController emailController = new TextEditingController();
+    TextEditingController passWordController = new TextEditingController();
+
     return Scaffold(
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
@@ -30,6 +33,7 @@ class Homepage extends StatelessWidget {
                   width: size.width * 0.8,
                   child: TextField(
                     keyboardType: TextInputType.emailAddress,
+                    controller: emailController,
                     decoration: InputDecoration(
                         border: OutlineInputBorder(),
                         labelText: "Email",
@@ -44,6 +48,7 @@ class Homepage extends StatelessWidget {
                   width: size.width * 0.8,
                   child: TextField(
                     obscureText: true,
+                    controller: passWordController,
                     decoration: InputDecoration(
                         prefixIcon: Icon(
                           Icons.password,
